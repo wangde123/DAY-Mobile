@@ -20,7 +20,7 @@ export default function HomePage() {
         {slides.map((slide) => (
           <Swiper.Item key={slide.id}>
             <div className={styles.swiperItem}>
-              <Image src={slide.image} alt={slide.title} className={styles.swiperImage} />
+              <Image lazy src={slide.image} alt={slide.title} className={styles.swiperImage} />
             </div>
           </Swiper.Item>
         ))}
