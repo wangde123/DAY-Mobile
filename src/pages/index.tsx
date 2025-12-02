@@ -16,7 +16,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.homeContainer}>
-      <Swiper autoplay loop autoplayInterval={3000}>
+      <Swiper autoplay loop autoplayInterval={2000}>
         {slides.map((slide) => (
           <Swiper.Item key={slide.id}>
             <div className={styles.swiperItem}>
