@@ -6,4 +6,10 @@ export default defineConfig({
     { path: "/docs", component: "docs" },
   ],
   npmClient: 'pnpm',
+  base: '/DAY-Mobile/',
+  publicPath: '/DAY-Mobile/',
+  hash: false,
+  history: {
+    type: 'browser',
+  }
 });
