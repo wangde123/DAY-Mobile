@@ -1,8 +1,5 @@
 import React from 'react';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import { Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/autoplay';
+import { Swiper, Image } from 'antd-mobile';
 
 import img1 from '../assets/20251202-165356.jpeg';
 import img2 from '../assets/20251202-165406.jpeg';
@@ -19,23 +16,13 @@ export default function HomePage() {
 
   return (
     <div className={styles.homeContainer}>
-      <Swiper
-        modules={[Autoplay]}
-        spaceBetween={0}
-        slidesPerView={1}
-        autoplay={{
-          delay: 3000,
-          disableOnInteraction: false,
-        }}
-        loop={true}
-        className={styles.swiper}
-      >
+      <Swiper autoplay loop autoplayInterval={3000}>
         {slides.map((slide) => (
-          <SwiperSlide key={slide.id}>
-            <div className={styles.slideContent}>
-              <img src={slide.image} alt={slide.title} className={styles.slideImage} />
+          <Swiper.Item key={slide.id}>
+            <div className={styles.swiperItem}>
+              <Image src={slide.image} alt={slide.title} className={styles.swiperImage} />
             </div>
-          </SwiperSlide>
+          </Swiper.Item>
         ))}
       </Swiper>
       
