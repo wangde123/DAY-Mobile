@@ -27,10 +27,7 @@ export default function HomePage() {
       </Swiper>
       
       <div className={styles.welcomeSection}>
-        <h2 className={styles.welcomeTitle}>Yay! Welcome to Mi Mobile!</h2>
-        <p className={styles.description}>
-          Enjoy the beautiful carousel experience on your device.
-        </p>
+        <h2 className={styles.welcomeTitle}>宝宝生日快乐</h2>
       </div>
     </div>
   );
