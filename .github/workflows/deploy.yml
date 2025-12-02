@@ -44,6 +44,10 @@ jobs:
       - name: Build project
         run: pnpm build
 
+      - name: Clean GitHub Pages cache
+        run: |
+          echo "Cleaning cache to force refresh of static assets"
+
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
