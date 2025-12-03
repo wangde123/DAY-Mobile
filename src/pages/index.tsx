@@ -1,5 +1,5 @@
 import React, { useCallback, useEffect, useState } from 'react';
-import { Swiper, Image, ImageUploader, Toast ,Dialog} from 'antd-mobile';
+import { Swiper, Image, ImageUploader, Toast ,Dialog,Space} from 'antd-mobile';
 import type { ImageUploadItem } from 'antd-mobile/es/components/image-uploader';
 import { createClient } from '@supabase/supabase-js';
 import styles from './index.less';
@@ -101,7 +101,7 @@ export default function HomePage() {
 
   return (
     <div className={styles.homeContainer}>
-      <Swiper autoplay loop autoplayInterval={2000}>
+      <Swiper autoplay loop autoplayInterval={3000}>
         {slides.map((slide) => (
           <Swiper.Item key={slide.id}>
             <div className={styles.swiperItem}>
@@ -110,8 +110,10 @@ export default function HomePage() {
           </Swiper.Item>
         ))}
       </Swiper>
+      <div className={styles.uploaderContainer}>
 
       <ImageUploader value={fileList} onChange={setFileList} upload={upload} onDelete={onDelete} maxCount={5} />
+      </div>
     </div>
   );
 }
