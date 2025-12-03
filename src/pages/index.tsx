@@ -1,9 +1,9 @@
 import React from 'react';
 import { Swiper, Image } from 'antd-mobile';
 
-import img1 from '../assets/20251202-165356.jpeg';
-import img2 from '../assets/20251202-165406.jpeg';
-import img3 from '../assets/20251202-165413.jpeg';
+import img1 from '../assets/20251203-101051.jpeg';
+import img2 from '../assets/20251203-101109.jpeg';
+import img3 from '../assets/20251203-101129.jpeg';
 
 import styles from './index.less';
 
