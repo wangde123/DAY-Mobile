@@ -1,9 +1,4 @@
 import { defineConfig } from "umi";
-import dotenv from 'dotenv';
-
-if (process.env.NODE_ENV !== 'production') {
-  dotenv.config();
-}
 
 const DEFAULT_BASE = '/';
 const repoBase = '/DAY-Mobile/';
