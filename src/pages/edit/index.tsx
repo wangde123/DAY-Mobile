@@ -68,9 +68,6 @@ export default function EditPage() {
     const fileName = `${Date.now()}-${Math.random().toString(36).slice(2)}.${fileExt}`;
     const filePath = `uploads/${fileName}`;
 
-    const localUrl = URL.createObjectURL(file);
-    setFileList((prev) => [{ url: localUrl }, ...prev]);
-
     const compressed = await compressImage(file);
     const { error } = await supabase.storage.from(BUCKET_NAME).upload(filePath, compressed, {
       cacheControl: '3600',
@@ -80,15 +77,12 @@ export default function EditPage() {
 
     if (error) {
       Toast.show({ content: '上传失败，请稍后重试', duration: 2000, icon: 'fail' });
-      setFileList((prev) => prev.filter((i) => i.url !== localUrl));
-      URL.revokeObjectURL(localUrl);
       throw error;
     }
 
     const { data } = supabase.storage.from(BUCKET_NAME).getPublicUrl(filePath);
-    setFileList((prev) => [{ url: data.publicUrl }, ...prev.filter((i) => i.url !== localUrl)]);
-    URL.revokeObjectURL(localUrl);
     Toast.show({ content: '上传成功', duration: 1500, icon: 'success' });
+    // Controlled ImageUploader will append the returned item automatically via onChange
     return { url: data.publicUrl };
   }, []);
 
